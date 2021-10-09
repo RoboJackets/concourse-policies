@@ -66,7 +66,7 @@ jobs_that_have_privileged_tasks[job_name] {
 	value.privileged == true
 }
 
-reasons["jobs triggered by pull requests must not use privileged tasks"] {
+reasons["jobs triggered by pull requests from forks must not use privileged tasks"] {
 	forks_from_pull_requests_are_ignored == false
 	count(jobs_that_have_privileged_tasks & jobs_that_are_triggered_by_pull_requests) > 0
 }

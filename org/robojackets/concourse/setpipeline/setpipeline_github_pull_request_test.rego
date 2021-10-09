@@ -179,7 +179,7 @@ test_jobs_that_have_privileged_tasks_missing {
 }
 
 test_jobs_triggered_by_pull_requests_true {
-	reasons == {"jobs triggered by pull requests must not use privileged tasks"} with input as {"data": {
+	reasons == {"jobs triggered by pull requests from forks must not use privileged tasks"} with input as {"data": {
 		"jobs": [{
 			"name": "thisisajobname",
 			"plan": [
@@ -204,7 +204,7 @@ test_jobs_triggered_by_pull_requests_true {
 }
 
 test_jobs_triggered_by_pull_requests_false_because_not_triggered {
-	not reasons["jobs triggered by pull requests must not use privileged tasks"] with input as {"data": {
+	not reasons["jobs triggered by pull requests from forks must not use privileged tasks"] with input as {"data": {
 		"jobs": [{
 			"name": "thisisajobname",
 			"plan": [
@@ -229,7 +229,7 @@ test_jobs_triggered_by_pull_requests_false_because_not_triggered {
 }
 
 test_jobs_triggered_by_pull_requests_false_because_not_privileged {
-	not reasons["jobs triggered by pull requests must not use privileged tasks"] with input as {"data": {
+	not reasons["jobs triggered by pull requests from forks must not use privileged tasks"] with input as {"data": {
 		"jobs": [{
 			"name": "thisisajobname",
 			"plan": [
