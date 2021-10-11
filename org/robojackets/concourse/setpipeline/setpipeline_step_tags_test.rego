@@ -7,8 +7,7 @@ test_tagged_step_disallowed {
 			"plan": [
 				{
 					"get": "thisisapullrequest",
-					"trigger": false,
-					"tags": ["somevalue"]
+					"tags": ["somevalue"], "trigger": false,
 				},
 				{"privileged": true, "task": "do-something-with-the-pull-request"},
 			],
@@ -33,7 +32,7 @@ test_untagged_step_allowed {
 			"plan": [
 				{
 					"get": "thisisapullrequest",
-					"trigger": false
+					"trigger": false,
 				},
 				{"privileged": true, "task": "do-something-with-the-pull-request"},
 			],
