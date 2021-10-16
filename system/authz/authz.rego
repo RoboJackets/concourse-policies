@@ -6,3 +6,8 @@ allow {
 	input.method = "POST"
 	input.path = ["v1", "data", "org", "robojackets", "concourse"]
 }
+
+allow {
+	input.method = "GET"
+	input.path = ["metrics"]
+}
