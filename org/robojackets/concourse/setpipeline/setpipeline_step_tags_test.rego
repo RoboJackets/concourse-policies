@@ -1,7 +1,7 @@
 package org.robojackets.concourse.setpipeline
 
 test_tagged_step_disallowed {
-	reasons == {"steps must not be tagged"} with input as {"data": {
+	reasons == {"steps must not be tagged with `resources`"} with input as {"data": {
 		"jobs": [{
 			"name": "thisisajobname",
 			"plan": [
@@ -26,7 +26,7 @@ test_tagged_step_disallowed {
 }
 
 test_untagged_step_allowed {
-	not reasons["steps must not be tagged"] with input as {"data": {
+	not reasons["steps must not be tagged with `resources`"] with input as {"data": {
 		"jobs": [{
 			"name": "thisisajobname",
 			"plan": [
